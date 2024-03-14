@@ -1,0 +1,42 @@
+$color-bg: #1D2F30
+$color-white: #ffffff
+$color-grey: #899D9D
+$color-bg-shade: #0B1919
+$color-text-green: #506829
+$color-primary-green: #BAE249
+$color-green-active: #688B05
+$color-green-focus: #83A440
+$color-green-hover: #91AC46
+$color-red: #E24949
+$color-dark-grey: #6c6d6d
+
+$gap: 64px
+$font: 16px
+
+@mixin rowflex
+    display: flex
+    flex-direction: row
+    align-items: center
+
+@mixin colflex
+    display: flex
+    flex-direction: column
+
+@mixin uigroup($bordertype)
+    cursor: pointer
+    &:focus svg
+        outline: 1px solid $color-green-focus
+        outline-offset: 3px
+    &:hover svg path
+        #{$bordertype}: $color-green-hover
+    &:active svg path
+        #{$bordertype}: $color-green-active 
+
+@mixin bodypadding
+    padding-left: 165px
+    padding-right: 165px
+
+@mixin justtext
+    font-weight: 400
+    font-size: $font
+    line-height: $font * 1.5

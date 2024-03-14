@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
+
+@import "config.sass"
+
+*
+    box-sizing: border-box
+
+body
+    font-family: "Open Sans", Arial, Helvetica, sans-serif
+    color: $color-white
+    background-color: $color-bg
+    overflow-x: hidden
+
+header
+    @include bodypadding
+    height: 60px
+    @include rowflex
+    justify-content: space-between
+    .header-left-part
+        @include rowflex
+        column-gap: 125px
+
+.link
+    cursor: pointer
+    &:hover
+        color: $color-primary-green
+    &:active
+        color: $color-green-active
+    &:focus
+        border: 1px solid $color-green-focus
+
+.logo
+    @include uigroup(stroke) 
+
+.icon-link
+    @include uigroup (stroke) 
+ 
+.top-part
+    height: 490px
+    @include bodypadding
+    padding-top: 110px
+    background-image: url("/images/bg1.jpg")
+    background-color: $color-dark-grey
+    background-blend-mode: multiply 
+    background-repeat: no-repeat
+    background-size: cover
+
+.bottom-part
+    height: 463px
+    @include bodypadding
+    @include colflex
+    align-items: start
+    padding-top: 60px
+    background-image: url("/images/bg2.jpg")
+    background-color: $color-dark-grey
+    background-blend-mode: multiply 
+    background-repeat: no-repeat
+    background-size: cover
+    & .bottom-text
+        width: 825px
+    & .form
+        @include colflex
+        align-items: start
+        & .input
+            width: 350px
+            height: 45px
+            padding: 0  0 0 16px
+            @include justtext
+            color: $color-grey
+            margin-bottom: 24px
+            &:hover
+                cursor: pointer
+                background-color: $color-grey
+                color: $color-white
+            &:focus
+                outline: 1px solid $color-green-focus
+                outline-offset: 2px
+                background-color: $color-white
+                color: $color-grey
+            &:active
+                background-color: $color-grey
+                color: $color-bg-shade
+                font-weight: 600
+        & .submit
+            width: 145px
+            height: 45px
+            background-color: $color-primary-green
+            color: $color-bg-shade
+            font-size: 16px
+            font-weight: 700
+            line-height: 22px
+            padding: 11.5px 26px 
+            cursor: pointer
+            border: none
+            &:hover
+                background-color: $color-green-hover
+            &:active
+                background-color: $color-green-active
+            &:focus
+                background-color: $color-green-focus
+                outline: 1px solid $color-green-focus
+                outline-offset: 1px
+                border: 2px solid $color-bg-shade
+            &:disabled
+                background-color: $color-grey
+                color: $color-bg 
+        & label
+            font-size: $font * 0.75
+            font-weight: 400
+            line-height: $font
+            letter-spacing: 0em
+            text-align: left
+            color: $color-red
+            margin:
+                left: 16px
+                bottom: 3px
+
+.text
+    margin-top: 16px
+    margin-bottom: 24px    
+
+h1
+    font-family: 'Cormorant', Georgia, 'Times New Roman', serif
+    font-weight: 700
+    font-size: $font * 3.75
+    line-height: $font * 3.75
+    width: 640px
+    margin: 0
+
+h2
+    font-family: 'Cormorant', Georgia, 'Times New Roman', serif
+    font-weight: 700
+    font-size: $font * 3
+    line-height: $font * 3
+    color: $color-white
+    font-style: italic
+    margin: 0
+
+h3
+    font-family: 'Cormorant', Georgia, 'Times New Roman', serif
+    font-weight: 700
+    font-size: $font * 1.5
+    line-height: $font * 2.25
+    color: $color-white
+    margin: 0
+
+p
+    @include justtext
+
+a
+    text-decoration: none
+    &:visited
+        text-decoration: none   
+
+.top-text
+    width: 640px
+
+.top-link
+    @include rowflex
+    column-gap: $gap * 0.125
+    cursor: pointer
+    color: $color-primary-green
+    font-weight: 700
+    font-size: $font
+    line-height: 22px
+    &:hover 
+        color: $color-green-hover
+        & svg path
+            fill: $color-green-hover
+        & svg
+            transform: scaleX(1.2) translateX(5px)
+    &:focus
+        border: 1px solid $color-green-focus
+    &:active
+        color: $color-green-active
+        svg path
+            stroke: $color-green-active
+            fill: $color-green-active
+    &:disabled
+        color: $color-grey
+        svg path
+            stroke: $color-grey
+            fill: $color-grey
+
+.catalog
+    padding-top: 60px
+    @include colflex
+    align-items: center
+    row-gap: 26px
+    & .carousel
+        width: 1110px
+        overflow-x: hidden
+    & .card-list
+        @include rowflex
+        justify-content: space-between
+        align-items: center
+        column-gap: 30px
+        & .card
+            width: 255px
+            height: 493px
+            border: 1px solid $color-bg-shade
+            @include colflex
+            justify-content: space-between
+            align-items: start
+            & img
+                width: 255px
+            & h3    
+                margin: 16px 16px 8px 16px
+            & .card-text
+                margin: 0 16px 16px 16px
+            & button
+                margin: 0 16px 24px 16px
+                width: 145px
+                height: 45px
+                border: 1px solid $color-primary-green
+                color: $color-primary-green
+                background-color: transparent
+                @include justtext
+                cursor: pointer
+                &:hover
+                    color: $color-bg-shade
+                    background-color: $color-primary-green
+                &:focus
+                    outline: 1px solid $color-green-focus
+                    outline-offset: 2px
+                &:active
+                    color: $color-bg-shade
+                    background-color: $color-green-active
+                    border: 1px solid $color-green-active
+                &:disabled
+                    color: $color-grey
+                    border: 1px solid $color-grey
+    & .pages
+        @include rowflex
+        column-gap: 30px
+        align-items: center
+        justify-content: center
+        & .arrow
+            cursor: pointer
+            &:focus
+                outline: 1px solid $color-green-focus
+                outline-offset: 3px
+            &:hover svg path
+                fill: $color-primary-green
+            &:active svg path
+                fill: $color-green-active
+            &:disabled svg path
+                fill: $color-grey
+        & .arrowback:hover svg
+            transform: scaleX(1.4) translateX(-5px)
+        & .arrowforward:hover svg
+            transform: scaleX(1.4) translateX(5px)
+                
+.news
+    @include bodypadding
+    @include colflex
+    justify-content: center
+    align-items: center
+    margin:
+        top: 57px
+        bottom: 60px
+        left: auto
+        right: auto
+    & h2
+        margin-bottom: 30px
+        align-self: flex-start
+    & img
+        width: 825px
+        height: 493px
+    & .news-card
+        @include rowflex
+        column-gap: 30px
+    & .news-group
+        background-color: $color-primary-green
+        @include colflex
+        justify-content: space-between
+        align-items: start
+        height: 493px
+        width: 255px
+        padding: 24px 16px
+        & h3
+            color: $color-bg
+        & .group-text
+            color: $color-text-green
+            margin:
+                top: 8px
+                bottom: 24px
+        & a p
+            margin: 0
+            font-size: 16px
+            font-weight: 700
+            line-height: 22px
+            letter-spacing: 0em
+            color: $color-bg-shade
+            text-decoration: none
+        & a
+            @include rowflex
+            column-gap: 8px
+            align-items: center
+            justify-content: start
+            cursor: pointer
+            &:hover p
+                color: $color-green-active
+            &:hover svg path
+                fill: $color-green-active
+            &:hover svg
+                transform: scaleX(1.2) translateX(5px)
+            &:focus
+                outline: 1px solid $color-green-focus
+                outline-offset: 5px
+            &:disabled p
+                color: $color-grey
+            &:disabled svg path
+                fill: $color-grey
+            
+footer
+    height: 79px
+    @include colflex
+    & .socials
+        width: 100vw
+        text-align: center
+        background-color: $color-bg-shade
+        @include rowflex
+        justify-content: center
+    & .copyrights
+        width: 100vw
+        text-align: center
+        color: $color-grey
+        font-weight: 400
+
+.socials-link
+    @include uigroup(fill)
+        
+ul
+    @include rowflex
+    column-gap: $gap
+    padding: 0
+    &.socials-list
+        column-gap: $gap * 0.46875
+    &.card-list
+        column-gap: $gap * 0.46875
+
+li
+    list-style-type: none
+
+.error
+    border: 3px solid $color-red 
+    color: $color-bg-shade
+    font-weight: 700
+
+.hidden
+    visibility: hidden
